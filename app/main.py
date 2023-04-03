@@ -4,7 +4,7 @@ import discord
 from os import getenv
 
 intents = discord.Intents.default()
-intents.messages = True
+intents.message_content = True
 
 client = discord.Client(intents=intents)
 
@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if "KoggersBot" in message.content:
+    if "koggersbot" in message.content.lower():
         await message.channel.send("https://tenor.com/view/breaking-bad-bb-jesse-jesse-yeah-bitch-yeah-bitch-gif-15852209")
 
 DISCORD_BOT_TOKEN = getenv("DISCORD_BOT_TOKEN")
