@@ -4,7 +4,7 @@ import discord
 from os import getenv
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.messages = True
 
 client = discord.Client(intents=intents)
 
